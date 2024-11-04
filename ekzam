@@ -1,0 +1,23 @@
+def erase_middle_label(tape):
+    # Визначаємо довжину стрічки
+    length = len(tape)
+    
+    # Перевіряємо, що кількість міток непарна
+    if length % 2 == 0:
+        raise ValueError("Кількість міток повинна бути непарною.")
+
+    # Знаходимо індекс середньої мітки
+    middle_index = length // 2
+
+    # Виводимо початковий стан
+    print("Початковий стан:", tape)
+
+    # Стерти середню мітку
+    tape = tape[:middle_index] + ' ' + tape[middle_index + 1:]
+
+    # Виводимо кінцевий стан
+    print("Кінцевий стан:", tape)
+
+# Приклад використання
+initial_tape = '#####'  # Початковий стан
+erase_middle_label(initial_tape)
